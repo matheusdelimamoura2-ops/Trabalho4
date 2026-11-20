@@ -116,15 +116,15 @@ def alinha_semiglobal(i,j,m_sim) :
      alinha_s, alinha_t = alinha_semiglobal(i-1,j, m_sim)
      alinha_s +=  s[i-1]
      alinha_t += "_"
+ elif i > 0 and m_sim[i][j] == m_sim[i - 1][j] + g:
+     alinha_s, alinha_t = alinha_semiglobal(i - 1, j, m_sim)
+     alinha_s += s[i - 1]
+     alinha_t += "_"
+     print(i, j)
  elif i > 0 and j > 0 and m_sim[i][j] == m_sim[i - 1][j - 1] + p(i,j) :
      alinha_s,alinha_t = alinha_semiglobal(i-1,j-1,m_sim)
      alinha_s += s[i-1]
      alinha_t += t[j-1]
-     print(i,j)
- elif i > 0 and m_sim[i][j] == m_sim[i-1][j] + g :
-     alinha_s,alinha_t =  alinha_semiglobal(i - 1, j, m_sim)
-     alinha_s += s[i-1]
-     alinha_t += "_"
      print(i,j)
  elif j > 0 and m_sim[i][j] == m_sim[i][j-1] + g :
     alinha_s,alinha_t = alinha_semiglobal(i,j-1,m_sim)
